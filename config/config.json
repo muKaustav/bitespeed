@@ -1,0 +1,10 @@
+{
+	"development": {
+		"username": "postgres",
+		"password": "postgres",
+		"database": "bitespeed",
+		"host": "192.168.0.166",
+		"port": 5432,
+		"dialect": "postgres"
+	}
+}

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - '5000:5000'
+    depends_on:
+      - db
+    networks:
+      - bitespeed
+
+  db:
+    image: postgres:11
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bitespeed
+    networks:
+      - bitespeed
+
+networks:
+  bitespeed:
+    driver: bridge
